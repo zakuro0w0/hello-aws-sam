@@ -1,0 +1,27 @@
+{
+    "name": "hello-aws-sam",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "amazonwebservices.aws-toolkit-vscode",
+                "github.copilot",
+                "github.copilot-chat",
+                "github.copilot-labs",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/devcontainers/features/docker-from-docker:1": {},
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/customink/codespaces-features/sam-cli:1": {}
+    },
+    "remoteUser": "vscode",
+    "workspaceFolder": "${localWorkspaceFolder}",
+    "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh"
+}
